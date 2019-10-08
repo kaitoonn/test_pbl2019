@@ -16,11 +16,12 @@
     <% @homes.each do |home| %>
       <tr>
         <td><%= home.title %></td>
-        <td><%= home.body %></td>
+        <td><%= home.bank %></td>
         <td><%= home.price %></td>
         <td><%= link_to '詳細', home %></td>
         <td><%= link_to '編集', edit_home_path(home) %></td>
         <td><%= link_to '消去', home, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to '+1000', home %></td>
       </tr>
     <% end %>
   </tbody>

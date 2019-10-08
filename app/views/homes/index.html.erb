@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Moneyger</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>人</th>
+      <th>銀行</th>
+      <th>財布</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @homes.each do |home| %>
+      <tr>
+        <td><%= home.title %></td>
+        <td><%= home.body %></td>
+        <td><%= home.body %></td>
+        <td><%= link_to '詳細', home %></td>
+        <td><%= link_to '編集', edit_home_path(home) %></td>
+        <td><%= link_to '消去', home, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to '金額入力', new_home_path %>

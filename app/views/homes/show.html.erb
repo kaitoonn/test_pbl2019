@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>人:</strong>
+  <%= @home.title %>
+</p>
+
+<p>
+  <strong>銀行:</strong>
+  <%= @home.body %>
+</p>
+
+<p>
+  <strong>財布:</strong>
+  <%= @home.body %>
+</p>
+
+<%= link_to 'Edit', edit_home_path(@home) %> |
+<%= link_to 'Back', homes_path %>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>BootstrapDevise</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <% if user_signed_in? %>
+    <p class="text-right">
+Login as : <%= current_user.email %>
+<%= link_to 'ユーザ情報編集', edit_user_registration_path , class: "btn btn-light" %>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete , class: "btn btn-secondary" %></p>
+  <% end %>
+
+<% if notice %>
+  <p class="alert alert-info"><%= notice %></p>
+<% elsif alert %>
+  <p class="alert alert-danger"><%= alert %></p>
+<% end %>
+
+    <%= yield %>
+
+
+  </body>
+</html>

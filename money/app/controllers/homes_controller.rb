@@ -1,5 +1,5 @@
 class HomesController < ApplicationController
-  before_action :set_home, only: [:show, :edit, :update, :destroy]
+  before_action :set_home, only: [:show, :edit, :update, :destroy, :plus]
 
   # GET /homes
   # GET /homes.json
@@ -61,6 +61,13 @@ class HomesController < ApplicationController
     end
   end
 
+  def call
+  end
+
+  def plus
+    @answer = params[:mone].to_f+1000 
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_home
@@ -69,6 +76,8 @@ class HomesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def home_params
-      params.require(:home).permit(:title, :body)
+      params.require(:home).permit(:title, :bank, :price)
     end
+
+
 end
